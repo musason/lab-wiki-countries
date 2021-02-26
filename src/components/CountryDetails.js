@@ -12,7 +12,9 @@ export default class CountryDetails extends Component {
     
 
     getDetails = () => {
-    let id = this.props.match.params.cca3
+        console.log(this.props)
+        //let id = this.props.match.params.cca3
+
 
     axios.get(`https://restcountries.eu/rest/v2/name/${id}`)
         .then((response) => {
@@ -39,21 +41,20 @@ export default class CountryDetails extends Component {
         this.getDetails()
     }
 
-    componentDidUpdate() {
-        const { details } = this.state;
-        let id = this.props.match.params.cca3
+    // componentDidUpdate() {
+    //     const { details } = this.state;
+    //     let id = this.props.match.params.cca3
         
-        details.id.filter((single) => {
-            if (single.id !== id) {
-              this.getDetails()
-          }
-        });
+    //     details.id.filter((single) => {
+    //         if (single.id !== id) {
+    //           this.getDetails()
+    //       }
+    //     });
         
-    }
+    // }
 
     render() {
         const { details } = this.state
-        console.log(this.props.match.params.cca3);
         return <div>
             <h1>Country</h1>
             {/* {

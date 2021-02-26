@@ -20,7 +20,7 @@ export default class CountriesList extends Component {
               {countryList.map((country) => {
                 return (
                   <Link
-                    countries={this.state.countryList}
+                    countries={countryList}
                     to={`/${country.cca3}`}
                   >
                     <a
@@ -37,7 +37,7 @@ export default class CountriesList extends Component {
               })}
             </div>
           </div>
-          <CountryDetails/>
+          <CountryDetails />
         </div>
       </div>
     );

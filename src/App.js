@@ -9,9 +9,14 @@ export default class App extends Component {
     return (
       <div>
         <Navbar />
-        <Route path="/" component={CountriesList} />
+        <CountriesList/>
         <Switch>
-          <Route path="/:cca3" component={CountryDetails} />
+          <Route
+            path="/:cca3"
+            render={(props) => {
+              return <CountryDetails {...props} />;
+            }}
+          />
         </Switch>
       </div>
     );
